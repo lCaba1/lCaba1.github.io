@@ -10,7 +10,11 @@ a {
 }
 
 a:hover {
-    color: orangered;
+    color: tomato;
+}
+
+.active {
+    color: tomato;
 }
 
 h1 {
@@ -68,14 +72,19 @@ header {
     top: 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 12px;
 }
 
 header nav {
     font-weight: bold;
     padding-right: 50px;
+    padding-left: 50px;
     display: flex;
     align-items: center;
-    gap: 30px;
+    column-gap: 30px;
+    flex-wrap: wrap;
+    row-gap: 8px;
 }
 
 .image-container {
@@ -100,4 +109,24 @@ footer {
     margin-top: 30px;
     padding-top: 15px;
     padding-bottom: 15px;
+
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+
+
+
+main {
+    padding-bottom: 92px;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
 }
