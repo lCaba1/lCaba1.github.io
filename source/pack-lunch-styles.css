@@ -55,8 +55,6 @@ footer {
     margin-top: 30px;
     padding-top: 15px;
     padding-bottom: 15px;
-
-
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -76,16 +74,6 @@ body {
     position: relative;
     min-height: 100vh;
 }
-
-
-
-
-
-
-
-
-
-
 
 .grid-container {
     display: grid;
@@ -140,7 +128,6 @@ button {
     border-radius: 10px;
     cursor: pointer;
     border: none;
-
     font-weight: bold;
 }
 
@@ -148,17 +135,10 @@ button {
     background-color: #d1d1d1;
 }
 
-
-
-
-
-
 @media (max-width: 800px) {
     .grid-container {
         grid-template-columns: 1fr 1fr;
     }
-
-
 
     header {
         flex-direction: column;
@@ -175,8 +155,6 @@ button {
     h2 {
         text-align: center;
     }
-
-
 
     nav a {
         font-size: calc(100% + 4px);
