@@ -93,6 +93,7 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 8px;
+    border: 2px solid transparent;
 }
 
 .grid-item:hover {
