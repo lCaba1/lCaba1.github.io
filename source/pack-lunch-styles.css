@@ -111,6 +111,8 @@ body {
 .grid-item > :nth-child(2) {
     font-size: calc(100% + 2px);
     font-weight: bold;
+    
+    margin-top: 6px;
 }
 
 .grid-item > :nth-child(3) {
@@ -125,7 +127,7 @@ body {
     margin-top: auto;
 }
 
-button {
+.grid-item button {
     background-color: #f1eee9;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -154,6 +156,19 @@ button {
     padding-right: 12%;
 }
 
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+label[for="address"] span,
+label[for="time"] span {
+    display: block;
+}
+
+
+
 
 
 
@@ -172,6 +187,17 @@ button {
     .form-container {
         grid-template-columns: 1fr;
     }
+
+
+
+
+    /*select {
+        width: 50%;
+    }   
+    
+    input:not([type="checkbox"]) {
+        width: 50%;
+    }*/
 }
 
 @media (max-width: 600px) {
@@ -196,4 +222,9 @@ button {
     header {
         position: static;
     }
+
+
+
+
+
 }
