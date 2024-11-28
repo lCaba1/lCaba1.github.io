@@ -108,21 +108,21 @@ body {
     border-radius: 35px;
 }
 
-.grid-item > :nth-child(2) {
+.grid-item> :nth-child(2) {
     font-size: calc(100% + 2px);
     font-weight: bold;
-    
+
     margin-top: 6px;
 }
 
-.grid-item > :nth-child(3) {
+.grid-item> :nth-child(3) {
     font-size: calc(100% + 2px);
     margin-bottom: 16px;
 
     overflow-wrap: anywhere;
 }
 
-.grid-item > :nth-child(4) {
+.grid-item> :nth-child(4) {
     color: gray;
     margin-top: auto;
 }
@@ -149,22 +149,89 @@ body {
 
 
 
+
+
+
+
+
 .form-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
     padding-left: 12%;
     padding-right: 12%;
+    color: white;
 }
 
-label {
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 4px;
+.form-item {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 35px;
+    box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+    background-color: black;
+    
 }
 
-label[for="address"] span,
-label[for="time"] span {
-    display: block;
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: calc(100% + 2px);
+    font-weight: bold;
+}
+
+.form-item label {
+    font-size: calc(100% + 2px);
+
+    display: inline-block;
+    margin-top: 16px;
+
+    overflow-wrap: anywhere;
+}
+
+input + br + span {
+    color: gray;
+}
+
+select, textarea,
+input:not([type="checkbox"]):not([type="radio"]) {
+    width: 100%;
+    text-align: center;
+    appearance: none;
+    text-wrap: wrap;
+    
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    
+    font-weight: bold;
+
+    
+}
+
+select, textarea, input {
+
+    background-color: #f1eee9;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+select:hover, textarea:hover, input:hover {
+    background-color: #d1d1d1 !important;
+}
+
+
+
+input[type="checkbox"],
+input[type="radio"] {
+    transform: scale(120%);
 }
 
 
@@ -185,7 +252,7 @@ label[for="time"] span {
     }
 
     .form-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
 
