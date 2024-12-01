@@ -36,6 +36,7 @@ header {
     padding-top: 15px;
     padding-bottom: 15px;
     position: sticky;
+    z-index: 10;
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -85,8 +86,6 @@ body {
 }
 
 .grid-item {
-    /*overflow: hidden;*/
-
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 40px;
@@ -284,10 +283,6 @@ input[type="radio"] {
     .form-container {
         grid-template-columns: 1fr 1fr;
     }
-
-
-
-
 }
 
 @media (max-width: 600px) {
@@ -316,7 +311,4 @@ input[type="radio"] {
     .form-container {
         grid-template-columns: 1fr;
     }
-
-
-
 }
