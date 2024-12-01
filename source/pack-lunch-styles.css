@@ -171,7 +171,14 @@ body {
     border-radius: 35px;
     box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
     background-color: black;
-    
+}
+
+.form-item:nth-child(-n+2) {
+    grid-row: span 2;
+}
+
+.form-item:hover legend {
+    color: tomato;
 }
 
 fieldset {
@@ -183,56 +190,79 @@ legend {
     font-weight: bold;
 }
 
-.form-item label {
+label {
     font-size: calc(100% + 2px);
-
     display: inline-block;
     margin-top: 16px;
-
     overflow-wrap: anywhere;
 }
 
-input + br + span {
-    color: gray;
+textarea {
+    resize: none;
 }
 
-select, textarea,
+input+br+span {
+    color: gray;
+
+    display: inline-block;
+    margin-top: 6px;
+}
+
+select,
+textarea,
 input:not([type="checkbox"]):not([type="radio"]) {
     width: 100%;
     text-align: center;
     appearance: none;
     text-wrap: wrap;
-    
-    
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 10px;
-    
     font-weight: bold;
-
-    
 }
 
-select, textarea, input {
-
+select,
+textarea,
+input {
     background-color: #f1eee9;
     cursor: pointer;
     border: none;
     outline: none;
+    margin-top: 6px;
 }
 
-select:hover, textarea:hover, input:hover {
+select:hover,
+textarea:hover,
+input:hover {
     background-color: #d1d1d1 !important;
 }
-
-
 
 input[type="checkbox"],
 input[type="radio"] {
     transform: scale(120%);
 }
+
+.form-item button {
+    background-color: #f1eee9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+    margin-top: 16px;
+    width: 100%;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+
+
 
 
 
@@ -258,13 +288,6 @@ input[type="radio"] {
 
 
 
-    /*select {
-        width: 50%;
-    }   
-    
-    input:not([type="checkbox"]) {
-        width: 50%;
-    }*/
 }
 
 @media (max-width: 600px) {
@@ -290,7 +313,9 @@ input[type="radio"] {
         position: static;
     }
 
-
+    .form-container {
+        grid-template-columns: 1fr;
+    }
 
 
 
