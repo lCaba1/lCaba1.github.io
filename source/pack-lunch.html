@@ -105,21 +105,21 @@
 
         <div>
             <h2>Сделать заказ</h2>
-            <form action="#" method="post" class="form-container">
+            <form action="https://httpbin.org/post" method="post" class="form-container">
                 <div class="form-item">
                     <fieldset>
                         <legend>
                             Ваш заказ
                         </legend>
                         <label for="soup">Суп</label><br>
-                        <select name="" id="soup">
+                        <select name="soup" id="soup">
                             <option value="" disabled selected hidden>-- Выберите суп --</option>
                             <option value="gazpacho">Гаспачо</option>
                             <option value="mushroom_soup">Грибной суп-пюре</option>
                             <option value="norwegian_soup">Норвежский суп</option>
                         </select><br>
                         <label for="main">Главное блюдо</label><br>
-                        <select name="" id="main">
+                        <select name="main" id="main">
                             <option value="" disabled selected hidden>-- Выберите главное блюдо --</option>
                             <option value="friedpotatoeswithmushrooms1">Жареная картошка с грибами</option>
                             <option value="lasagna">Лазанья</option>
@@ -127,14 +127,14 @@
                             </option>
                         </select><br>
                         <label for="drink">Напиток</label><br>
-                        <select name="" id="drink">
+                        <select name="drink" id="drink">
                             <option value="" disabled selected hidden>-- Выберите напиток --</option>
                             <option value="orangejuice">Апельсиновый сок</option>
                             <option value="applejuice">Яблочный сок</option>
                             <option value="carrotjuice">Морковный сок</option>
                         </select><br>
                         <label for="comment">Комментарии к заказу</label><br>
-                        <textarea name="" id="comment" rows="4"></textarea><br>
+                        <textarea name="comment" id="comment" rows="4"></textarea><br>
                     </fieldset>
                 </div>
                 <div class="form-item">
@@ -143,18 +143,18 @@
                             Ваши данные
                         </legend>
                         <label for="name">Имя</label><br>
-                        <input type="text" id="name"><br>
+                        <input type="text" id="name" name="name"><br>
                         <label for="email">Email</label><br>
-                        <input type="email" id="email"><br>
+                        <input type="email" id="email" name="email"><br>
                         <label class="receive-info">
-                            <input type="checkbox">
+                            <input type="checkbox" name="receive-info">
                             <span>Получать информацию о скидках и акциях</span>
                         </label><br>
                         <label for="phone-number">Номер телефона</label><br>
-                        <input type="tel" id="phone-number"><br>
+                        <input type="tel" id="phone-number" name="phone-number"><br>
                         <label class="address-label">
                             <span>Адрес доставки</span><br>
-                            <input type="text"><br>
+                            <input type="text" name="address"><br>
                             <span>Доставка осуществляется только по Москве</span>
                         </label><br>
                     </fieldset>
@@ -170,7 +170,7 @@
                         </label><br>
                         <label class="time-label">
                             <span>Укажите время доставки</span><br>
-                            <input type="time" min="7:00" max="23:00" step="300"><br>
+                            <input type="time" min="7:00" max="23:00" step="300" name="time"><br>
                             <span>Доступное время доставки с 7:00 до 23:00</span>
                         </label><br>
                     </fieldset>
@@ -178,8 +178,8 @@
                 <div class="form-item">
                     <fieldset>
                         <legend>Форма</legend>
-                        <button>Сбросить</button><br>
-                        <button>Отправить</button>
+                        <button type="reset" name="action-reset">Сбросить</button><br>
+                        <button type="submit" name="action-save">Отправить</button>
                     </fieldset><br>
                 </div>
             </form>
