@@ -112,14 +112,14 @@
                             Ваш заказ
                         </legend>
                         <label for="soup">Суп</label><br>
-                        <select name="soup" id="soup">
+                        <select name="order-soup" id="soup" required>
                             <option value="" disabled selected hidden>-- Выберите суп --</option>
                             <option value="gazpacho">Гаспачо</option>
                             <option value="mushroom_soup">Грибной суп-пюре</option>
                             <option value="norwegian_soup">Норвежский суп</option>
                         </select><br>
                         <label for="main">Главное блюдо</label><br>
-                        <select name="main" id="main">
+                        <select name="order-main" id="main" required>
                             <option value="" disabled selected hidden>-- Выберите главное блюдо --</option>
                             <option value="friedpotatoeswithmushrooms1">Жареная картошка с грибами</option>
                             <option value="lasagna">Лазанья</option>
@@ -127,14 +127,14 @@
                             </option>
                         </select><br>
                         <label for="drink">Напиток</label><br>
-                        <select name="drink" id="drink">
+                        <select name="order-drink" id="drink" required>
                             <option value="" disabled selected hidden>-- Выберите напиток --</option>
                             <option value="orangejuice">Апельсиновый сок</option>
                             <option value="applejuice">Яблочный сок</option>
                             <option value="carrotjuice">Морковный сок</option>
                         </select><br>
                         <label for="comment">Комментарии к заказу</label><br>
-                        <textarea name="comment" id="comment" rows="4"></textarea><br>
+                        <textarea name="order-comment" id="comment" rows="4"></textarea><br>
                     </fieldset>
                 </div>
                 <div class="form-item">
@@ -143,18 +143,18 @@
                             Ваши данные
                         </legend>
                         <label for="name">Имя</label><br>
-                        <input type="text" id="name" name="name"><br>
+                        <input type="text" id="name" name="data-name" required><br>
                         <label for="email">Email</label><br>
-                        <input type="email" id="email" name="email"><br>
+                        <input type="email" id="email" name="data-email" required><br>
                         <label class="receive-info">
-                            <input type="checkbox" name="receive-info">
+                            <input type="checkbox" name="data-receive-info" checked>
                             <span>Получать информацию о скидках и акциях</span>
                         </label><br>
                         <label for="phone-number">Номер телефона</label><br>
-                        <input type="tel" id="phone-number" name="phone-number"><br>
+                        <input type="tel" id="phone-number" name="data-phone-number" required><br>
                         <label class="address-label">
                             <span>Адрес доставки</span><br>
-                            <input type="text" name="address"><br>
+                            <input type="text" name="data-address" required><br>
                             <span>Доставка осуществляется только по Москве</span>
                         </label><br>
                     </fieldset>
@@ -163,23 +163,41 @@
                     <fieldset>
                         <legend>Время доставки</legend>
                         <label class="speed-label">
-                            <input type="radio" name="speed-option">
+                            <input type="radio" name="delivery-speed" value="faster" id="radio1" required>
                             <span>Как можно скорее</span><br>
-                            <input type="radio" name="speed-option">
+                        </label><br>
+                        <label class="speed-label">
+                            <input type="radio" name="delivery-speed" value="ontime" id="radio2" required>
                             <span>К указанному времени</span>
                         </label><br>
                         <label class="time-label">
                             <span>Укажите время доставки</span><br>
-                            <input type="time" min="7:00" max="23:00" step="300" name="time"><br>
+                            <input type="time" step="300" name="delivery-time" min="07:00" max="23:00" id="time"><br>
                             <span>Доступное время доставки с 7:00 до 23:00</span>
                         </label><br>
+                        <script>
+                            const radio1 = document.getElementById('radio1');
+                            const radio2 = document.getElementById('radio2');
+                            const inputTime = document.getElementById('time');
+                            radio1.addEventListener('change', function () {
+                                if (radio1.checked) {
+                                    inputTime.disabled = true;
+                                }
+                            });
+                            radio2.addEventListener('change', function () {
+                                if (radio2.checked) {
+                                    inputTime.disabled = false;
+                                    inputTime.setAttribute('required', 'required')
+                                }
+                            });
+                        </script>
                     </fieldset>
                 </div>
                 <div class="form-item">
                     <fieldset>
                         <legend>Форма</legend>
                         <button type="reset" name="action-reset">Сбросить</button><br>
-                        <button type="submit" name="action-save">Отправить</button>
+                        <button type="submit" name="action-submit">Отправить</button>
                     </fieldset><br>
                 </div>
             </form>
