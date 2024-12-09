@@ -18,8 +18,12 @@
             <a href="#contact">Контакты</a>
         </nav>
     </header>
-    <main>
-        <section>
+    <main id="main-container">
+
+        <!--<script type="module" src="./data.js"></script>-->
+        <script type="module" src="./pack-lunch-script.js"></script>
+
+        <!--<section>
             <h2>Выберите суп</h2>
             <div class="grid-container">
                 <div class="grid-item">
@@ -96,7 +100,7 @@
                     <button>Добавить</button>
                 </div>
             </div>
-        </section>
+        </section>-->
 
 
 
@@ -105,7 +109,7 @@
 
         <div>
             <h2>Сделать заказ</h2>
-            <form action="https://httpbin.org/post" method="post" class="form-container">
+            <form action="https://httpbin.org/post" method="post" class="form-container" id="form">
                 <div class="form-item">
                     <fieldset>
                         <legend>
@@ -179,17 +183,25 @@
                             const radio1 = document.getElementById('radio1');
                             const radio2 = document.getElementById('radio2');
                             const inputTime = document.getElementById('time');
-                            radio1.addEventListener('change', function () {
-                                if (radio1.checked) {
-                                    inputTime.disabled = true;
-                                }
-                            });
-                            radio2.addEventListener('change', function () {
+                            const form = document.getElementById('form');
+                            function updateInputState() {
                                 if (radio2.checked) {
                                     inputTime.disabled = false;
-                                    inputTime.setAttribute('required', 'required')
+                                    inputTime.setAttribute('required', 'required');
+                                } else {
+                                    inputTime.disabled = true;
+                                    inputTime.removeAttribute('required');
+                                    inputTime.value = '';  
                                 }
-                            });
+                            }
+                            radio1.addEventListener('change', updateInputState);
+                            radio2.addEventListener('change', updateInputState);
+                            form.addEventListener('reset', 
+                                function () {
+                                    setTimeout(updateInputState, 0)
+                                }
+                            );
+                            updateInputState();
                         </script>
                     </fieldset>
                 </div>
