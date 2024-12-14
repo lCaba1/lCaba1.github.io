@@ -224,6 +224,8 @@ input:not([type="checkbox"]):not([type="radio"]) {
     padding-right: 30px;
     border-radius: 10px;
     font-weight: bold;
+
+    margin-top: 6px;
 }
 
 select,
@@ -233,7 +235,7 @@ input {
     cursor: pointer;
     border: none;
     outline: none;
-    margin-top: 6px;
+    /*margin-top: 6px;*/
 }
 
 select:hover,

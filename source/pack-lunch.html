@@ -24,9 +24,9 @@
             <h2>Сделать заказ</h2>
             <form action="https://httpbin.org/post" method="post" class="form-container" id="form">
                 <div class="form-item">
-                    <fieldset>
+                    <fieldset id="order-fieldset">
                         <legend>Ваш заказ</legend>
-                        <label for="order-soup">Суп</label><br>
+                        <!--<label for="order-soup">Суп</label><br>
                         <select name="order-soup" id="order-soup" required>
                             <option value="" disabled selected hidden>-- Выберите суп --</option>
                             <option value="gazpacho">Гаспачо</option>
@@ -47,7 +47,7 @@
                             <option value="orangejuice">Апельсиновый сок</option>
                             <option value="applejuice">Яблочный сок</option>
                             <option value="carrotjuice">Морковный сок</option>
-                        </select><br>
+                        </select><br>-->
                         <label for="order-comment">Комментарии к заказу</label><br>
                         <textarea name="order-comment" id="order-comment" rows="4"></textarea><br>
                     </fieldset>
@@ -60,11 +60,11 @@
                         <label for="client-email">Email</label><br>
                         <input type="email" id="client-email" name="client-email" required><br>
                         <label>
-                            <input type="checkbox" name="client-receive-info" checked>
+                            <input type="checkbox" name="client-subscribe" checked>
                             <span>Получать информацию о скидках и акциях</span>
                         </label><br>
-                        <label for="client-phone-number">Номер телефона</label><br>
-                        <input type="tel" id="client-phone-number" name="client-phone-number" required><br>
+                        <label for="client-phone">Номер телефона</label><br>
+                        <input type="tel" id="client-phone" name="client-phone" required><br>
                         <label>
                             <span>Адрес доставки</span><br>
                             <input type="text" name="client-address" required><br>
