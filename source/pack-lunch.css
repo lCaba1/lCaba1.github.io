@@ -98,7 +98,8 @@ body {
     border: 2px solid transparent;
 }
 
-.grid-item:hover {
+.grid-item:hover,
+.script-hover {
     border: 2px solid tomato;
 }
 
@@ -176,7 +177,8 @@ body {
     grid-row: span 2;
 }
 
-.form-item:hover legend {
+.form-item:hover legend,
+#order-price {
     color: tomato;
 }
 
@@ -194,6 +196,10 @@ label {
     display: inline-block;
     margin-top: 16px;
     overflow-wrap: anywhere;
+}
+
+label[hidden] {
+    display: none;
 }
 
 .speed-label:nth-of-type(2) {

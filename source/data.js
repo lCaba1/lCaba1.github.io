@@ -71,22 +71,4 @@ export const menu = [
         count: '300мл',
         image: '../data/applejuice.jpg'
     }
-]
-
-export const headers = {
-    'soup': 'Выберите суп',
-    'main': 'Выберите главное блюдо',
-    'drink': 'Выберите напиток'
-}
-
-export const labels = {
-    'soup': 'Суп',
-    'main': 'Главное блюдо',
-    'drink': 'Напиток'
-}
-
-export const defaults = {
-    'soup': 'Суп не выбран',
-    'main': 'Главное блюдо не выбрано',
-    'drink': 'Напиток не выбран'
-}
+];

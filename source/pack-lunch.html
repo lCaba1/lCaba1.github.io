@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="./pack-lunch.css" rel="stylesheet">
     <title>Food Construct</title>
+    <script type="module" src="./pack-lunch.js"></script>
 </head>
 
 <body>
@@ -19,35 +20,43 @@
         </nav>
     </header>
     <main id="main-container">
-        <script type="module" src="./pl-show.js"></script>
+        <section id="menu-soup" hidden>
+            <h2>Выберите суп</h2>
+            <div class="grid-container"></div>
+        </section>
+        <section id="menu-main" hidden>
+            <h2>Выберите главное блюдо</h2>
+            <div class="grid-container"></div>
+        </section>
+        <section id="menu-drink" hidden>
+            <h2>Выберите напиток</h2>
+            <div class="grid-container"></div>
+        </section>
         <div>
             <h2>Сделать заказ</h2>
             <form action="https://httpbin.org/post" method="post" class="form-container" id="form">
                 <div class="form-item">
                     <fieldset id="order-fieldset">
                         <legend>Ваш заказ</legend>
-                        <!--<label for="order-soup">Суп</label><br>
-                        <select name="order-soup" id="order-soup" required>
-                            <option value="" disabled selected hidden>-- Выберите суп --</option>
-                            <option value="gazpacho">Гаспачо</option>
-                            <option value="mushroom_soup">Грибной суп-пюре</option>
-                            <option value="norwegian_soup">Норвежский суп</option>
-                        </select><br>
-                        <label for="order-main">Главное блюдо</label><br>
-                        <select name="order-main" id="order-main" required>
-                            <option value="" disabled selected hidden>-- Выберите главное блюдо --</option>
-                            <option value="friedpotatoeswithmushrooms1">Жареная картошка с грибами</option>
-                            <option value="lasagna">Лазанья</option>
-                            <option value="chickencutletsandmashedpotatoes">Котлеты из курицы с картофельным пюре
-                            </option>
-                        </select><br>
-                        <label for="order-drink">Напиток</label><br>
-                        <select name="order-drink" id="order-drink" required>
-                            <option value="" disabled selected hidden>-- Выберите напиток --</option>
-                            <option value="orangejuice">Апельсиновый сок</option>
-                            <option value="applejuice">Яблочный сок</option>
-                            <option value="carrotjuice">Морковный сок</option>
-                        </select><br>-->
+                        <div hidden>
+                            <label for="order-soup" hidden>Суп<br></label>
+                            <select name="order-soup" id="order-soup" required hidden>
+                                <option value="" disabled selected hidden>Суп не выбран</option><br>
+                            </select>
+                            <label for="order-main" hidden>Главное блюдо<br></label>
+                            <select name="order-main" id="order-main" required hidden>
+                                <option value="" disabled selected hidden>Главное блюдо не выбрано</option><br>
+                            </select>
+                            <label for="order-drink" hidden>Напиток<br></label>
+                            <select name="order-drink" id="order-drink" required hidden>
+                                <option value="" disabled selected hidden>Напиток не выбран</option><br>
+                            </select>
+                            <label>
+                                <span>Стоимость заказа</span>
+                                <strong id="order-price">0р</strong>
+                            </label>
+                        </div>
+                        <label>Ничего не выбрано</label>
                         <label for="order-comment">Комментарии к заказу</label><br>
                         <textarea name="order-comment" id="order-comment" rows="4"></textarea><br>
                     </fieldset>
@@ -88,30 +97,6 @@
                             <input type="time" step="300" name="delivery-time" min="07:00" max="23:00" id="time"><br>
                             <span>Доступное время доставки с 7:00 до 23:00</span>
                         </label><br>
-                        <script>
-                            const radio1 = document.getElementById('radio1');
-                            const radio2 = document.getElementById('radio2');
-                            const inputTime = document.getElementById('time');
-                            const form = document.getElementById('form');
-                            function updateInputState() {
-                                if (radio2.checked) {
-                                    inputTime.disabled = false;
-                                    inputTime.setAttribute('required', 'required');
-                                } else {
-                                    inputTime.disabled = true;
-                                    inputTime.removeAttribute('required');
-                                    inputTime.value = '';
-                                }
-                            }
-                            radio1.addEventListener('change', updateInputState);
-                            radio2.addEventListener('change', updateInputState);
-                            form.addEventListener('reset',
-                                function () {
-                                    setTimeout(updateInputState, 0)
-                                }
-                            );
-                            updateInputState();
-                        </script>
                     </fieldset>
                 </div>
                 <div class="form-item">
